@@ -7,6 +7,15 @@
   box-sizing: border-box;
 }
 
+body{
+  background-image: url("../img/beer1.jpg");
+  background-color: #cccccc;
+  background-position: center center;
+  background-repeat: no repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .loginBox {
   width: 100%;
   min-height: 100vh;
@@ -20,6 +29,13 @@
   justify-content: space-between;
   padding-top: 5px;
 }
+form {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
 
 /******************************************
 /* LAYOUT
