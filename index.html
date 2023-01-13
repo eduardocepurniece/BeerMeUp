@@ -5,23 +5,7 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Beer Me Up!</title>
-
-		<div class="loginBox">
-			
-			<form>
-				<h1>BeerMeUp</h1>
-				<label for="email">Email:</label><br>
-				<input type="email" id="email" name="email"><br>
-				<label for="password">Password:</label><br>
-				<input type="password" id="password" name="password">
-				<div class="boxButtons">
-					<input type="button" onclick="alert('Hello World!')" value="Sign up">
-					<input type="submit" value="Log in">
-				</div>
-			</form>
-
-		</div>
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/reset.css">
@@ -29,6 +13,23 @@
 	</head>
 	<body>
 		
+		<title>Beer Me Up!</title>
+
+		<div class="loginBox">
+			
+			<form>
+				<h1>BeerMeUp</h1>
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" class="textBox">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" class="textBox">
+				<div class="boxButtons">
+					<input type="button" onclick="alert('Hello World!')" value="Sign up" class="cButton">
+					<input type="submit" value="Log in" class="cButton">
+				</div>
+			</form>
+
+		</div>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
