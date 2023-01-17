@@ -24,7 +24,7 @@ label {
   margin-left: 10px;
 }
 
-.loginBox {
+section {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -33,14 +33,24 @@ label {
   background-color: rgba(0, 255, 255, 0.2);
 
 }
+.inputBox {
+  display: flex;
+  flex-flow: column
+}
 
 .boxButtons{
   display: flex;
   justify-content: space-between;
+  /*align-items: center;*/
   padding-top: 5px;
   margin: 0 10px 20px 10px;
 }
-form {
+
+.boxButtons > p {
+  font-size: small;
+}
+
+section > div {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
@@ -59,7 +69,7 @@ h1 {
 .textBox {
   height: 30px;
   width: 250px;
-  margin: 0 10px 20px 10px;
+  margin: 0 10px 15px 10px;
 }
 
 .cButton {
@@ -73,11 +83,19 @@ h1 {
   font-size: 15px;
 }
 
+.checkBox {
+  margin-top: -10px;
+}
+
+.checkBox label {
+  font-size: 10px;
+  margin-left: 0px;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 .hiddenClass{
   display: none;
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
