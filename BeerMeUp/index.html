@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>BeerMeUp!</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		
+		
+
+		<section>
+			<div>
+				<h1>BeerMeUp</h1>
+			
+				<form id="loginBox" action="login.php" method="post">
+				
+					<div class="inputBox">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" class="textBox" required>
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" class="textBox" required>
+						<div class="boxButtons">
+							<p>Don't have an account?<a href="#" id="singUp">Sign up!</a></p>
+							<input type="submit" value="Log in" class="cButton">
+						</div>
+					</div>				
+				</form>
+
+				<form action="signUp.php" method="post">
+					<div id="singUpBox" class="inputBox hiddenClass">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" class="textBox" required>
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" class="textBox"required>
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" class="textBox"required>
+						<label for="confirmPassword"> Confirm Password</label>
+						<input type="password" id="confirmPassword" name="confirmPassword" class="textBox" required>
+						<div class="checkBox">
+							<input type="checkbox" id="termsConditions" name="termsConditions" required>
+							<label for="termsConditions">I have read and agree to the Terms and Conditions</label>
+						</div>
+						<div class="boxButtons">
+							<p><a href="#" id="alreadyHaveAccount">I already have an account</a></p>
+							<input type="submit" value="Sign Up" class="cButton">
+						</div>
+					</div>
+				</form>
+			</div>			
+		</section>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

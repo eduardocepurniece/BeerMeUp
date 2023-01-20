@@ -1,0 +1,101 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+}
+
+body{
+  background-image: url("../img/beer1.jpg");
+  background-color: #cccccc;
+  background-position: center center;
+  background-repeat: no repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+label {
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  color: gray;
+  margin-left: 10px;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 255, 255, 0.2);
+
+}
+.inputBox {
+  display: flex;
+  flex-flow: column
+}
+
+.boxButtons{
+  display: flex;
+  justify-content: space-between;
+  /*align-items: center;*/
+  padding-top: 5px;
+  margin: 0 10px 20px 10px;
+}
+
+.boxButtons > p {
+  font-size: small;
+}
+
+section > div {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+h1 {
+  align-self: center;
+  font-family: Lobster, sans-serif;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.textBox {
+  height: 30px;
+  width: 250px;
+  margin: 0 10px 15px 10px;
+}
+
+.cButton {
+  background-color: rgba(0, 153, 51, 0.8);
+  color: white;
+  font-weight: 100;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 75px;
+  font-size: 15px;
+}
+
+.checkBox {
+  margin-top: -10px;
+}
+
+.checkBox label {
+  font-size: 10px;
+  margin-left: 0px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.hiddenClass{
+  display: none;
+  /*background-color: aqua;*/
+}
