@@ -1,6 +1,11 @@
 const newEntry = document.querySelector("#newEntry");
 const submitNewEntry = document.querySelector("#submitNewEntry");
 let globalKeyCounter = 100000;
+let entries = JSON.parse(localStorage.getItem("entries") || "[]");
+if(!entries){
+  entries = [];
+}
+appendEntries(entries);
 
 //Hide submitEntryPage
 newEntry.addEventListener('click', (event) => {
@@ -12,37 +17,64 @@ newEntry.addEventListener('click', (event) => {
 submitNewEntry.addEventListener('click', (event) => {
     const newEntryTitle = document.getElementById("newEntryTitle").value;
     const newEntryPicture = document.getElementById("newEntryPicture").files[0];
+    let pictureURL = "";
     const newEntryText = document.getElementById("newEntryText").value;
-
+    
     //Save picture to local storage
-    var reader = new FileReader()
-    reader.onload = function(base64) {
-      localStorage["newEntryPicture"] = base64;
-    }
+    let reader = new FileReader()
     reader.readAsDataURL(newEntryPicture);
-    //
-    const newEntry = new Entry(globalKeyCounter, newEntryTitle, newEntryPicture, newEntryText, '0');
+    reader.addEventListener('load', () => {
+      pictureURL += reader.result;
+      const newEntry = new Entry(globalKeyCounter, newEntryTitle, pictureURL, newEntryText, '0');
+      console.log(newEntry);
+      entries.push(newEntry);
+      console.log(entries);
+    });
+    //create new entry and saves it in array of entries
+    
     globalKeyCounter = globalKeyCounter + 1; 
-    console.log(newEntryPicture);
 
-    const newP = document.createElement("p");
-    const node = document.createTextNode(newEntryText);
-    newP.appendChild(node);
-
-    const element = document.getElementById("entries");
-    element.appendChild(newP);
+    //Save array of entries to localStorage
+    localStorage.setItem("entries", JSON.stringify(entries));
+    //console.log(entries);
+    
 
     document.getElementById("homePage").classList.remove("hiddenClass");
     document.getElementById("submitEntryPage").classList.add("hiddenClass");
 });
 
+
+//Read array and provide output to html
+function appendEntries(objectArray){
+  objectArray.forEach(element => {
+    const newDiv = document.createElement("div");
+    const newTitle = document.createElement("p");
+    const newPicture = document.createElement("img");
+    const newDescription = document.createElement("p");
+
+    const titleNode = document.createTextNode(element.beerName);
+    const descriptionNode = document.createTextNode(element.description);
+    console.log(element.picture);
+    newPicture.src = element.pictureDir;
+
+    newTitle.appendChild(titleNode);
+    newDescription.appendChild(descriptionNode);
+
+    newDiv.appendChild(newTitle);
+    newDiv.appendChild(newPicture);
+    newDiv.appendChild(newDescription);
+
+    const mainDiv = document.getElementById("entries");
+    mainDiv.appendChild(newDiv);
+  });    
+}
 // Entry object constructor
 function Entry(key, beerName, pictureDir, description, date){
     this.key = key;
-    this.beerName = `${key}${beerName}`;
-    this.pictureDir = `${key}${pictureDir}`;
-    this.desctription = `${key}${description}`;
-    this.date = `${key}${date}`;
+    this.beerName = beerName;
+    this.pictureDir = pictureDir;
+    this.desctription = description;
+    this.date = date;
 }
 
 /*
